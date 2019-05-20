@@ -1,6 +1,9 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 
+import withReduxStore from '../src/libs/with-redux-store'
+import { Provider } from 'react-redux'
+
 import Layout from '../src/components/Layout'
 
 class MyApp extends App {
@@ -15,16 +18,18 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps,reduxStore } = this.props;
 
     return (
       <Container>
         <Layout>
-            <Component {...pageProps} />
+            <Provider store={reduxStore}>
+                <Component {...pageProps} />
+            </Provider>
         </Layout>
       </Container>
     );
   }
 }
 
-export default MyApp;
+export default withReduxStore(MyApp);
