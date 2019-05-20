@@ -1,12 +1,14 @@
 import Link from 'next/link'
 
+import Layout from '../src/components/Layout'
+
 const AboutUs = () => (
-  <div>
+  <Layout>
     AboutUs Page.
     <Link href={{pathname:'/'}}>
 			<a>go back to Home page</a>
 		</Link>
-  </div>
+  </Layout>
 );
 
 export default AboutUs;
