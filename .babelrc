@@ -3,6 +3,13 @@
     "next/babel"
   ],
   "plugins": [
-    "@babel/plugin-proposal-do-expressions"
+    "@babel/plugin-proposal-do-expressions",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
   ]
 }
